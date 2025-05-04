@@ -2,21 +2,17 @@
 #include <utility>
 #include <string>
 #include <vector>
-#include "lagrange.hpp"
+#include "parametric.hpp"
+
+using namespace std;
 
 int main () {
 
-    // std::pair<double, double> point1 = {1,1};
-    // std::pair<double, double> point2 = {2,3};
-    // std::pair<double, double> point3 = {3,2};
+    LagrangeParametric curve1({{1, 1}, {2, 2}, {4, 6}, {6, -1}, {0, 4}}, false);
+    cout << "\n";
+    LagrangeParametric curve2({{1, 1}, {2, 2}, {4, 6}, {6, -1}, {0, 4}}, true);
+    cout << "\n";
 
-    // std::vector<int> coefficients = binomialExpansionCoefficients(6);
-    // std::cout << intVectorToString(coefficients) << "\n";
-
-    LagrangePolynomial xt({{0, 1}, {2, 5}, {4, 17}, {6, -1}});
-
-    for (double i = 0; i <= 5; i += 0.5) {
-        std::cout << i << ((int) i == i - 0.5 ? "" : "  ") << "  " << xt.evaluate(i) << "\n";
-    }
+    cout << curve1.toDesmosString() << "\n\n" << curve2.toDesmosString() << "\n";
 
 }

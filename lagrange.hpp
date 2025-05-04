@@ -1,17 +1,27 @@
+#ifndef LAGRANGE_HPP
+#define LAGRANGE_HPP
+
 #include <iostream>
 #include <utility>
 #include <string>
 #include <vector>
 
+using namespace std;
+
 class LagrangePolynomial {
 
-    std::vector<std::pair<double, double>> points;
-    std::vector<double> coefficients;
+    vector<pair<float, float>> points;
 
 public:
-    LagrangePolynomial();
-    LagrangePolynomial(const std::vector<std::pair<double, double>> &initPoints);
+    LagrangePolynomial ();
+    LagrangePolynomial (const vector<pair<float, float>> &initPoints);
 
-    double evaluate (const double &x);
+    float evaluate (const float &x);
+    void setPoints (const vector<pair<float, float>> &newPoints);
+    void addPoint (const pair<float, float> &newPoint);
+
+    string toDesmosString (const string &iv); // iv = independent variable
 
 };
+
+#endif
